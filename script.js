@@ -1,11 +1,13 @@
+// Sample API Call: https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?start_date=1985-05-01&end_date=1997-07-01&order=asc&column_index=4&collapse=quarterly&transformation=rdiff
+
 var stockSymbol = 'AAPL';
 
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
 var yyyy = today.getFullYear();
-var startDate = '2016-05-01';
-var endDate = mm+'/'+dd+'/'+yyyy;
+var startDate = mm + '/' + dd + '/' + (yyyy - 1);
+var endDate = mm + '/' + dd + '/' + yyyy;
 
 var apiUrl= 'https://www.quandl.com/api/v3/datasets/WIKI/' + stockSymbol + '.json?start_date=' + startDate + '&end_date=' + endDate + '&order=asc&column_index=4&collapse=daily&transformation=rdiff';
 
